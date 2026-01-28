@@ -1,0 +1,275 @@
+/* PC & Laptop*/
+@media screen and (min-width: 1199.98px) {
+  .mobile-header {
+    display: none;
+  }
+  .only-show-mobile {
+    display: none;
+  }
+  .client .images {
+    justify-content: space-between;
+  }
+}
+
+/* Tablet ngang / iPad Pro */
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+  .mobile-header {
+    display: none;
+  }
+  .hero .info {
+    width: calc((480 / var(--content-width)) * 100%);
+  }
+  .only-show-mobile {
+    display: none;
+  }
+  .client .images {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* trên tablet & mobile có những thành phần giống nhau */
+/* Tablet and mobile */
+@media screen and (max-width: 991px) {
+  .navbar {
+    position: relative;
+  }
+  /* căn giữa icon ra giữa sau khi ẩn nav ul */
+  .navbar .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .navbar ul {
+    display: none;
+  }
+  .toggle-menu svg {
+    width: 24px;
+    color: #666; /* truyền color vào currentcolor cho fill của svg */
+  }
+
+  .menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    opacity: 0; /* tuy ko thấy n vẫn còn phủ , k bấm được các item dưới   */
+    visibility: hidden; /* bấm được các item z-index < 1*/
+    transition: 0.5s ease;
+  }
+  /* phần menu content trên overlay hiện ra khi click toggle-menu */
+  .menu-drawwer {
+    position: fixed;
+    background: #fff;
+    z-index: 2;
+    inset: 0 40% 0 0; /*chiếm 60% width */
+    /* display: none; */
+    /* ẩn menu-drawwer sang trải tạo effect trượt xuất hiện khi click toggle-menu
+    */
+    transform: translateX(-100%);
+    transition: 0.5s ease;
+    padding: 60px; /* padding đẩy content -> đẩy img */
+  }
+  .menu-checkbox:checked ~ .menu-overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+  .menu-checkbox:checked ~ .menu-drawwer {
+    transform: translateX(0); /* trả về vị trí ban đầu */
+  }
+  .menu-drawwer ul {
+    /* padding: 40px; */
+    margin-top: 48px;
+  }
+  .menu-drawwer ul a {
+    display: block;
+    color: #4f5361;
+    font-size: 1.4 rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-block: 14px;
+  }
+  .separate {
+    border-top: 1.5px solid #ebebeb;
+  }
+  .hero-img {
+    display: none;
+  }
+  .hero .info {
+    width: 80%;
+    text-align: center;
+
+    margin: 0 auto;
+  }
+  .hero .info .desc {
+    width: 80%;
+    margin: 30px auto auto;
+  }
+  .client .images {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .list-guide .guide-item {
+    margin: 0;
+    flex: 1;
+    /* grid-template-columns: 1fr 1fr; */
+  }
+  .feature .list {
+    /* grid-template-columns: 1fr 1fr; */
+  }
+
+  /* chỉ chuyển row đầu tiên thành flex-dir col */
+  .stats .content > .row:first-of-type {
+    flex-direction: column;
+  }
+  .stats .img-block {
+    width: 100%;
+    order: 2;
+    margin-top: 65px;
+  }
+  .stats .info {
+    width: 100%;
+    order: 1; /* đẩy info lên hiển thị trước img-block */
+    padding-inline: 0;
+
+    text-align: center;
+  }
+  .stats .info .sub-title {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .stats .info .sub-title::before {
+    width: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .row-qty .qty {
+    font-size: 5rem;
+  }
+  .row-qty .qty-desc {
+    font-size: 1.5rem;
+  }
+  .subscription .info .sub-title {
+    font-size: 3.2rem;
+  }
+  .subscription .info .desc {
+    font-size: 1.3rem;
+  }
+  .subscription .image {
+    right: calc(100 / var(--content-width) * 100%);
+  }
+  .footer .row-top {
+    /* display: grid;
+    grid-template-columns: 1fr 2fr; */
+    /* flex-wrap: wrap; */
+    row-gap: 80px;
+    column-gap: calc(120 / var(--content-width) * 100%);
+  }
+}
+/* Tablet dọc */
+@media screen and (max-width: 991px) and (min-width: 767.98px) {
+  .only-show-mobile {
+    display: none;
+  }
+  .hero .info {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .hero-img {
+    display: none;
+  }
+  .stats .info .desc {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+/* mobile */
+@media screen and (max-width: 767px) {
+  .hide-on-mobile {
+    display: none;
+  }
+  .menu-drawwer {
+    inset: 0 25% 0 0;
+    padding: 40px;
+  }
+  .navbar .actions {
+    display: none;
+  }
+  .hero-wrap {
+    height: calc(100vh - 80px);
+  }
+  .hero .title {
+    margin-top: 20px;
+    font-size: 5.2rem;
+  }
+  .hero .info {
+    width: 100%;
+  }
+  .hero .info .desc {
+    width: 100%;
+  }
+  .client .images {
+    row-gap: 20px;
+  }
+  .guides .list-guide {
+    flex-direction: column;
+    row-gap: 60px;
+  }
+  .guide-cta {
+    margin-top: 60px;
+  }
+  .feature .row .link {
+    display: none;
+  }
+
+  .view-all {
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+  }
+  .stats .info .desc {
+    width: 100%;
+  }
+  .stats .info .sub-title {
+    width: 100%;
+  }
+  .stats .img-block .image {
+    width: 100%;
+  }
+  .stats .stats-trend {
+    padding: 16px 10px 16px;
+    width: 220px;
+  }
+  .stats .row-qty {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 60px;
+  }
+  .subscription .image {
+    display: none;
+  }
+  .subscription .body {
+    height: auto;
+  }
+  .subscription .body .info {
+    margin: 0;
+    padding: 32px 24px;
+    display: block;
+    width: 100%;
+  }
+  .footer .row-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer .row-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    /* column-gap: 30px; */
+    row-gap: 24px;
+  }
+}

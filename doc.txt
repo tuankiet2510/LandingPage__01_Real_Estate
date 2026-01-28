@@ -1,0 +1,17 @@
+Làm phần Neo header
+Neo phần chứa nabvar cách top 1 khoảng x px , khi kéo hết x px , phần chứa nav bar sẽ dính cứng trên top màn hình
+Dùng thuộc tính position sticky thay vì fixed vì fixed không được linh hoạt như sticky
+
+Với sticky set top:0 khi kéo hết khoảng cách x px sẽ loại bỏ được khoảng không gian chiều cao x px
+Với fixed sẽ phải neo 1 khoảng từ navbar lên đỉnh => tốn nhiều không gian hơn
+
+Vấn đề : 
+Nếu thẻ cha được set height , khi cuộn thẻ con fixed quá thẻ cha , thẻ cha và thẻ con fixed sẽ biến mất ⇒ chỉ có thể neo được trong kích thước thẻ cha
+=> Đưa thẻ nav ra khỏi header để ở main vì header có height 100vh , khi cuộn khỏi phần vh đầu tiền navbar cũng sẽ biến mất
+=> Tạo fixed-header ở main chứa navbar , đổi tên header ban đầu thành hero'
+
+Tạo favicon bằng favicon generator
+Tạo href cho các link tới các favicon
+Tại file manifest.json , sửa lại thành đường dẫn tuyệt đối
+"src":"\/android-icon-36x36.png"
+=> "src":"/assets/img/favicon/android-icon-72x72.png"
